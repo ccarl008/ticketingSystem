@@ -1,0 +1,28 @@
+{
+  "sqltools.connections": [
+    {
+      "name": "ticketing-local",
+      "driver": "PostgreSQL",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "database": "ticketing",
+      "username": "your_db_user",
+      "password": "your_db_password",
+      "savePassword": false,
+      "ssh": null
+    },
+    {
+      "name": "IT_Ticketing_System",
+      "driver": "PostgreSQL",
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "database": "it_ticketing",
+      "username": "postgres",
+      "password": "postgres",
+      "savePassword": false,
+      "ssh": null
+    }
+  ]
+}

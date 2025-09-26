@@ -80,56 +80,7 @@ INSERT INTO comments (ticket_id, technician_id, comment_text) VALUES
 
 SELECT * FROM clients;
 SELECT * FROM tickets;
-SELECT * FROM comments;-- Clients
-CREATE TABLE clients (
-    client_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    phone VARCHAR(20),
-    company VARCHAR(100)
-);
-
--- Technicians
-CREATE TABLE technicians (
-    technician_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) UNIQUE NOT NULL,
-    phone VARCHAR(20)
-);
-
--- Categories
-CREATE TABLE categories (
-    category_id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL
-);
-
--- Status
-CREATE TABLE status (
-    status_id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL
-);
-
--- Tickets
-CREATE TABLE tickets (
-    ticket_id SERIAL PRIMARY KEY,
-    client_id INT REFERENCES clients(client_id),
-    technician_id INT REFERENCES technicians(technician_id),
-    category_id INT REFERENCES categories(category_id),
-    status_id INT REFERENCES status(status_id),
-    title VARCHAR(200) NOT NULL,
-    description TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Comments
-CREATE TABLE comments (
-    comment_id SERIAL PRIMARY KEY,
-    ticket_id INT REFERENCES tickets(ticket_id),
-    technician_id INT REFERENCES technicians(technician_id),
-    comment_text TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+SELECT * FROM comments;
 
 -- Insert Clients
 INSERT INTO clients (name, email, phone, company) VALUES
